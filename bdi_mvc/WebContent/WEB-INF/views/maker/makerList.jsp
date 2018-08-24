@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/views/common/common.jsp" %>
+<%@ include file="/WEB-INF/views/common/common.jsp"%>
 <body>
 	<div class="container">
 		<h4>메이커리스트</h4>
@@ -16,25 +16,27 @@
 				</tr>
 			</thead>
 			<tbody>
-			<c:forEach items="${list}" var="m">
-		<tr>
-			<td>${m.mnum}</td>
-			<td><a href="/maker/makerView?mNum=${m.mnum}">${m.mname}</td>
-			<td>${m.mprice}</td>
-			<td>${m.mcnt}</td>
-			<td>${m.mprice*m.mcnt}</td>
-			<td>${m.mdesc}</td>
-		</tr>
-		 
-	</c:forEach>
-			</tbody>
+			<%=request.getAttribute("list")%>
+			<c:forEach	items="${list}" var="m">
+				<tr>
+					<td>${m.mnum}</td>
+					<td><a href="/maker/makerView?mNum=${m.mnum}">${m.mname}</a></td>
+					<td>${m.mprice}</td>
+					<td>${m.mcnt}</td>
+					<td>${m.mtotal}</td>
+					<td>${m.mdesc}</td>
+				</tr>
+			</c:forEach>
+			</tbody>	
 		</table>
-		<div><button onclick="goInsert()">추가</button></div>
+		<div>
+			<button onclick="goPage()">메이커등록</button>
+		</div>
 	</div>
-</body>
 <script>
-	function goInsert(){
-		location.href="/maker/makerInsert";		
+	function goPage(){
+		location.href='/views/maker/makerInsert';
 	}
 </script>
+</body>
 </html>
