@@ -4,9 +4,18 @@ public class Maker {
 	private int mnum;
 	private String mname;
 	private int mprice;
-	private int mtotal;
 	private int mcnt;
+	private int mtotal;
 	private String mdesc;
+	public Maker(int mnum, String mname, int mprice, int mcnt, int mtotal, String mdesc) {
+		super();
+		this.mnum = mnum;
+		this.mname = mname;
+		this.mprice = mprice;
+		this.mcnt = mcnt;
+		this.mtotal = mtotal;
+		this.mdesc = mdesc;
+	}
 	public int getMnum() {
 		return mnum;
 	}
@@ -25,17 +34,17 @@ public class Maker {
 	public void setMprice(int mprice) {
 		this.mprice = mprice;
 	}
+	public int getMcnt() {
+		return mcnt;
+	}
+	public void setMcnt(int mcnt) {
+		this.mcnt = mcnt;
+	}
 	public int getMtotal() {
 		return mtotal;
 	}
 	public void setMtotal(int mtotal) {
 		this.mtotal = mtotal;
-	}
-	public int getMcnt() {
-		return mcnt;
-	}
-	public void setCnt(int mcnt) {
-		this.mcnt = mcnt;
 	}
 	public String getMdesc() {
 		return mdesc;
@@ -43,19 +52,10 @@ public class Maker {
 	public void setMdesc(String mdesc) {
 		this.mdesc = mdesc;
 	}
-	public Maker(int mnum, String mname, int mprice, int mtotal, int mcnt, String mdesc) {
-		super();
-		this.mnum = mnum;
-		this.mname = mname;
-		this.mprice = mprice;
-		this.mtotal = mtotal;
-		this.mcnt = mcnt;
-		this.mdesc = mdesc;
-	}
 	@Override
 	public String toString() {
-		return "Maker [mnum=" + mnum + ", mname=" + mname + ", mprice=" + mprice + ", mtotal=" + mtotal + ", mcnt=" + mcnt
-				+ ", mdesc=" + mdesc + "]";
+		return "Maker [mnum=" + mnum + ", mname=" + mname + ", mprice=" + mprice + ", mcnt=" + mcnt + ", mtotal="
+				+ mtotal + ", mdesc=" + mdesc + "]";
 	}
 	
 }

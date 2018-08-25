@@ -43,7 +43,6 @@ public class UserServlet extends HttpServlet {
 				if(name!=null && age!=null) {
 					request.setAttribute("cnt", ds.updateDel(num, name, age));
 				}
-				System.out.println(num+name+age);
 				request.setAttribute("user", ds.getDel(num));
 			}else if(cmd.equals("userDelete")) {
 				String[] nums = request.getParameterValues("num");

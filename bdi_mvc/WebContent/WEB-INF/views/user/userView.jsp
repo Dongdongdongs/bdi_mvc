@@ -1,30 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/views/common/common.jsp" %>
+<%@ include file="/WEB-INF/views/common/common.jsp"%>
 <body>
-	${user}
 	<div class="container">
 		<table class="table table-bordered">
 			<tr>
 				<th>번호</th>
-				<td>${user.num}</td>
+				<td>${user.num}</td>				
 			</tr>
 			<tr>
 				<th>이름</th>
-				<td>${user.name}</td>
+				<td>${user.name}</td>				
 			</tr>
 			<tr>
 				<th>나이</th>
-				<td>${user.age}</td>
+				<td>${user.age}</td>				
 			</tr>
 		</table>
 		<div>
 			<button onclick="goPage()">리스트 이동</button>
-			<button onclick="goUpdate()">수정</button>	
+			<button onclick="goUpdate()">수정</button>
 		</div>
 	</div>
-	
-</body>
 <script>
 	function goPage(){
 		location.href="/user/userList";
@@ -33,5 +30,5 @@
 		location.href="/user/userUpdate?num=${user.num}";
 	}
 </script>
-
+</body>
 </html>
