@@ -156,7 +156,7 @@ public class MakerDAOImpl implements MakerDAO {
 				"where mNum = ?";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, mk.getMname());
+			ps.setInt(1, mk.getMnum());
 			return ps.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
